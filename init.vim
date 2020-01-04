@@ -1,16 +1,16 @@
 call plug#begin('~/.nvim/plugged')
 
 " Themes
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'Yggdroot/indentLine'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'dracula/vim', { 'as': 'dracula' } " colorscheme
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " auto complete
+Plug 'jiangmiao/auto-pairs' " auto close brackets
+Plug 'vim-airline/vim-airline' " bottom bar
+Plug 'scrooloose/nerdtree' " file browser
+Plug 'mxw/vim-jsx' " syntax hl
+Plug 'pangloss/vim-javascript' " syntax hl
+Plug 'Yggdroot/indentLine' " indent lines
+Plug 'kien/ctrlp.vim' " file browser
+Plug 'tpope/vim-fugitive' " git plugin
 
 call plug#end()
 
