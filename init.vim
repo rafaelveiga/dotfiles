@@ -11,6 +11,7 @@ Plug 'pangloss/vim-javascript' " syntax hl
 Plug 'Yggdroot/indentLine' " indent lines
 Plug 'kien/ctrlp.vim' " file browser
 Plug 'tpope/vim-fugitive' " git plugin
+Plug 'TaDaa/vimade' " dim panels
 
 call plug#end()
 
