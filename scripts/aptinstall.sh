@@ -18,3 +18,6 @@ install vim
 
 # Personal
 install spotify-client
+
+# Log
+install figlet
