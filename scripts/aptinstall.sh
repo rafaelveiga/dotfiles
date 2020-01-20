@@ -13,5 +13,8 @@ function install {
   fi
 }
 
-# Basics
+# Development
 install vim
+
+# Personal
+install spotify-client
