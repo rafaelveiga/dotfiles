@@ -65,3 +65,6 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#enabled = 1
+
+" Close current buffer and move to new tab
+command Close :b# | bd#
