@@ -1,7 +1,6 @@
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'dracula/vim', { 'as': 'dracula' } " colorscheme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " auto complete
 Plug 'jiangmiao/auto-pairs' " auto close brackets
 Plug 'vim-airline/vim-airline' " bottom bar
@@ -9,9 +8,14 @@ Plug 'scrooloose/nerdtree' " file browser
 Plug 'mxw/vim-jsx' " syntax hl
 Plug 'pangloss/vim-javascript' " syntax hl
 Plug 'Yggdroot/indentLine' " indent lines
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 Plug 'kien/ctrlp.vim' " file browser
 Plug 'tpope/vim-fugitive' " git plugin
 Plug 'TaDaa/vimade' " dim panels
+Plug 'reewr/vim-monokai-phoenix'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -19,15 +23,12 @@ call plug#end()
 set autoindent expandtab tabstop=2 shiftwidth=2
 
 " Theme Setting
-colorscheme dracula
+colorscheme monokai-phoenix
 syntax on
-let $TERM="xterm-256color"
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+"set termguicolors
 
 " Line Numbers
 set number
-set relativenumber
 
 " Font
 set encoding=utf-8
@@ -68,3 +69,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Close current buffer and move to new tab
 command Close :b# | bd#
+
+set nowrap
+set colorcolumn=80
