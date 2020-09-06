@@ -1,20 +1,25 @@
 #!/bin/bash
 
+# Symlink all dotfiles
 echo "Adding Symlinks"
 ./symlink.sh
 
 echo "apt installs"
-./aptinstall.sh
+./apt.sh
+
+echo "snap installs"
+./snap.sh
 
 figlet "Programs"
 ./programs.sh
 #./desktop.sh
 
-# Get all upgrades
+# Get all upgrades & clean up
 figlet "Upgrades"
 sudo apt upgrade -y
+sudo apt autoremove -y
 
-# Source bashrc 
+# Source bashrc
 figlet "Sourcing .bashrc"
 source ~/.bashrc
 

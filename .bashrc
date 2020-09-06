@@ -124,3 +124,5 @@ export NVM_DIR="$HOME/.nvm"
 alias api="cd Draft5-API"
 alias v3="cd Draft5-V3"
 alias adm="cd Draft5-Admin-V3"
+alias python=python3
+alias testawesome="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"

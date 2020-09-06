@@ -14,15 +14,9 @@ function install {
 }
 
 # Development
-install vim
 install mysql-server
-install mysql-workbench
-
-# Personal
-install spotify-client
+install redis-server
 
 # Desktop
 install gnome-shell-extensions
-
-# Log
-install figlet
+install gnome-tweaks
