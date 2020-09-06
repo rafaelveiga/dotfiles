@@ -13,9 +13,15 @@ function install {
   fi
 }
 
+# Basics
+install wget
+
 # Development
 install mysql-server
 install redis-server
+
+# Programs
+install brave-browser
 
 # Desktop
 install gnome-shell-extensions
