@@ -7,12 +7,8 @@ echo "Adding Symlinks"
 echo "apt installs"
 ./apt.sh
 
-echo "snap installs"
-./snap.sh
-
 figlet "Programs"
 ./programs.sh
-#./desktop.sh
 
 # Get all upgrades & clean up
 figlet "Upgrades"
