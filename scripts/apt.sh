@@ -20,6 +20,9 @@ install wget
 # Development
 install mysql-server
 install redis-server
+install vim
+install discord
+install spotify-client
 
 # Desktop
 install gnome-shell-extensions

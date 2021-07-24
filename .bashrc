@@ -125,3 +125,8 @@ alias v4="cd ~/code/draft5/draft5-v4"
 alias adm="cd ~/code/draft5/Draft5-Admin-V3"
 alias python=python3
 alias testawesome="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"
+
+# Setting the path for Python 3.4
+PATH="/Library/Frameworks/Python.framework/Versions/3.4:${PATH}"
+export PATH
+alias 'nvim'=/home/rafael/.local/bin/nvim.appimage

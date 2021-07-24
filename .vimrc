@@ -37,7 +37,7 @@ set encoding=utf-8
 set clipboard=unnamedplus
 
 " Node path for coc.nvim
-let g:coc_node_path = $HOME.'/.nvm/versions/node/v15.8.0/bin/node'
+let g:coc_node_path = $HOME.'/.nvm/versions/node/v12.21.0/bin/node'
 
 " > CtrlP.vim
 " Ctrl + P toggle
@@ -72,3 +72,9 @@ command Close :b# | bd#
 
 set nowrap
 set colorcolumn=80
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
