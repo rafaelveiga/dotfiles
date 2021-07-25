@@ -24,6 +24,3 @@ install vim
 install discord
 install spotify-client
 
-# Desktop
-install gnome-shell-extensions
-install gnome-tweaks
