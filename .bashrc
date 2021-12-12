@@ -116,17 +116,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# add node path
+export NODE_PATH=`which node`
+
 # nvm - node version manager
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-alias api="cd ~/code/draft5/Draft5-API"
-alias v4="cd ~/code/draft5/draft5-v4"
-alias adm="cd ~/code/draft5/Draft5-Admin-V3"
 alias python=python3
-alias testawesome="Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome"
 
 # Setting the path for Python 3.4
 PATH="/Library/Frameworks/Python.framework/Versions/3.4:${PATH}"
 export PATH
 alias 'nvim'=/home/rafael/.local/bin/nvim.appimage
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

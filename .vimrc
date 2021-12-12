@@ -37,7 +37,7 @@ set encoding=utf-8
 set clipboard=unnamedplus
 
 " Node path for coc.nvim
-let g:coc_node_path = $HOME.'/.nvm/versions/node/v12.21.0/bin/node'
+let g:coc_node_path = $NODE_PATH
 
 " > CtrlP.vim
 " Ctrl + P toggle
