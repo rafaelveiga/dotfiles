@@ -21,3 +21,6 @@ ln -s /media/sf_dotfiles/config/nitrogen ~/.config/nitrogen
 
 # symlink rofi
 ln -s /media/sf_dotfiles/config/rofi ~/.config/rofi
+
+# symlink .zshrc
+ln -s /media/sf_dotfiles/.zshrc ~/.zshrc
