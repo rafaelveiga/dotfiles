@@ -1,0 +1,15 @@
+#! /bin/sh
+
+sxhkd &
+polybar &
+picom &
+nitrogen --restore
+
+bspc monitor -d Work Fun Misc
+
+bspc config border_width         2
+bspc config window_gap          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
