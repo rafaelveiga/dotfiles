@@ -13,9 +13,37 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { "github/copilot.vim" }
+  { "github/copilot.vim" },
+
+  -- editor tabs
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+
+  -- status line
+  { "nvim-lualine/lualine.nvim" },
+
+  -- color scheme
+  { 'Mofiqul/dracula.nvim' },
+
+  -- tree sitter
+  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 }
 
 require("lazy").setup(plugins, opts)
+
+
+-- plugin setup
+-- ===================
+-- bufferline.nvim
+require("bufferline").setup{}
+
+-- status line
+require('lualine').setup {
+  options = {
+    theme = 'dracula-nvim'
+  }
+}
+
+
+
 
 
