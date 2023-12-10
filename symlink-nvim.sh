@@ -1,0 +1,1 @@
+ln -s $HOME/code/dotfiles/config/nvim $HOME/.config
