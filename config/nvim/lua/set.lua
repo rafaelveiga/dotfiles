@@ -1,4 +1,5 @@
 vim.opt.relativenumber = true
+vim.g.mapleader = " "
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

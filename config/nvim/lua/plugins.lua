@@ -26,6 +26,22 @@ local plugins = {
 
   -- tree sitter
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+
+  -- neo tree
+  {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+      }
+  },
+
+  -- telescope
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
+  }
 }
 
 require("lazy").setup(plugins, opts)
