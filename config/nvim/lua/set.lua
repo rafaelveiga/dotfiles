@@ -7,3 +7,5 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.cmd('colorscheme dracula')
+
+vim.opt.updatetime = 300

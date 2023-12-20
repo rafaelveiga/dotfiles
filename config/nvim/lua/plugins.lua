@@ -28,7 +28,7 @@ local plugins = {
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 
   -- neo tree
-  {
+  { 
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
       dependencies = {
@@ -41,11 +41,18 @@ local plugins = {
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
-  }
+  },
+
+  -- comment string
+  { 'b3nj5m1n/kommentary' },
+
+  -- lsp + prettier
+  { 'neovim/nvim-lspconfig' },
+  { 'jose-elias-alvarez/null-ls.nvim' },
+  { 'MunifTanjim/prettier.nvim' },
 }
 
 require("lazy").setup(plugins, opts)
-
 
 -- plugin setup
 -- ===================
@@ -59,7 +66,26 @@ require('lualine').setup {
   }
 }
 
+-- lsp setup
 
+-- prettier setup
+local prettier = require("prettier")
 
-
+prettier.setup({
+  bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
+  filetypes = {
+    "css",
+    "graphql",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "less",
+    "markdown",
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+  },
+})
 
