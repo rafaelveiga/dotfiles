@@ -33,6 +33,9 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
   },
 
+  -- NERDTree
+  { 'preservim/nerdtree' },
+
   -- comment string
   { 'b3nj5m1n/kommentary' },
 
@@ -79,17 +82,6 @@ local mason = require("mason")
 mason.setup()
 
 -- null ls setup
-local status, null_ls = pcall(require, "null-ls")
-if (not status) then return end
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
-    null_ls.builtins.diagnostics.fish
-  }
-})
 
 -- prettier setup
 local prettier = require("prettier")

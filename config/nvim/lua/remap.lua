@@ -1,7 +1,3 @@
--- control + p to open Neotree
-vim.keymap.set("n", "<C-p>", function()
-  require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
-end)
 
 -- space + p to find files
 vim.keymap.set("n", "<leader>p", function()
@@ -17,6 +13,12 @@ end)
 vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("x", "<C-_>", "<Plug>kommentary_visual_default", {})
 
+-- ctrl + n to open NERDTree
+vim.api.nvim_set_keymap("n", "<C-n>", ":NERDTreeToggle<CR>", { noremap = true, silent = true })
+
+-- alt + 1 or 2 to switch between tabs
+vim.api.nvim_set_keymap("n", "<A-1>", ":bprevious<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-2>", ":bnext<CR>", { noremap = true, silent = true })
 
 keyset = vim.keymap.set
 
