@@ -27,16 +27,6 @@ local plugins = {
   -- tree sitter
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 
-  -- neo tree
-  { 
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v3.x",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-      }
-  },
-
   -- telescope
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
@@ -46,9 +36,23 @@ local plugins = {
   -- comment string
   { 'b3nj5m1n/kommentary' },
 
-  -- lsp + prettier
+  -- lsp
   { 'neovim/nvim-lspconfig' },
+
+  -- null ls
   { 'jose-elias-alvarez/null-ls.nvim' },
+
+  -- mason, manages language servers
+  { 'williamboman/mason.nvim' },
+
+  -- autocompletion
+  { 'hrsh7th/nvim-cmp' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-buffer' },
+  { 'onsails/lspkind-nvim' },
+  { 'L3MON4D3/LuaSnip' },
+
+  -- prettier
   { 'MunifTanjim/prettier.nvim' },
 }
 
@@ -67,6 +71,25 @@ require('lualine').setup {
 }
 
 -- lsp setup
+local lspconfig = require("lspconfig")
+lspconfig.tsserver.setup {}
+
+-- mason setup
+local mason = require("mason")
+mason.setup()
+
+-- null ls setup
+local status, null_ls = pcall(require, "null-ls")
+if (not status) then return end
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.eslint_d.with({
+      diagnostics_format = '[eslint] #{m}\n(#{c})'
+    }),
+    null_ls.builtins.diagnostics.fish
+  }
+})
 
 -- prettier setup
 local prettier = require("prettier")
@@ -88,4 +111,39 @@ prettier.setup({
     "yaml",
   },
 })
+
+-- autocompletion setup
+local status, cmp = pcall(require, "cmp")
+if (not status) then return end
+local lspkind = require 'lspkind'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true
+    }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+  }),
+  formatting = {
+    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+  }
+})
+
+vim.cmd [[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]
 
