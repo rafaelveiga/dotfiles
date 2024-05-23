@@ -17,7 +17,7 @@ mkdir -p /code/dotfiles
 3. Clone the repository
 
 ```bash
-git clone https://github.com/rafaelveiga/dotfiles.git ./code/dotfiles
+git clone https://dotfiles.rafaelveiga.com ./code/dotfiles
 ```
 
 4. CD into the directory
@@ -26,14 +26,8 @@ git clone https://github.com/rafaelveiga/dotfiles.git ./code/dotfiles
 cd ./code/dotfiles
 ```
 
-5. Chmod the setup scripts
-
-```bash
-sudo chmod 700 ./code/dotfiles/*
-```
-
 6. Run the setup script
 
 ```bash
-./code/dotfiles/install.sh
+./install.sh
 ```
