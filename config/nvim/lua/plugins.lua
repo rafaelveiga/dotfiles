@@ -33,6 +33,9 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
   },
 
+  -- indent lines
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },  
+
   -- NERDTree
   { 'preservim/nerdtree' },
 
@@ -65,6 +68,9 @@ require("lazy").setup(plugins, opts)
 -- ===================
 -- bufferline.nvim
 require("bufferline").setup{}
+
+-- indentlines
+require("ibl").setup()
 
 -- status line
 require("plugins.lualine");

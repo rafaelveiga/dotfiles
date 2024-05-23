@@ -32,3 +32,6 @@ vim.cmd [[
   highlight! default link CmpItemKind CmpItemMenuDefault
 ]]
 
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+
