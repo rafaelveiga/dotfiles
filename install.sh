@@ -1,10 +1,12 @@
 #!/bin/bash
 
-./symlink.sh
 ./apt-install.sh
 
 figlet "Installing Programs" | lolcat
 ./programs.sh
+
+figlet "Symlinking" | lolcat
+./symlink.sh
 
 ## upgrade all
 figlet "Upgrading" | lolcat
