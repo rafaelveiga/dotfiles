@@ -13,7 +13,6 @@ function install {
 
 # Basics
 install zsh
-install git
 install neovim
 
 # Cool Stuff
