@@ -14,6 +14,7 @@ function install {
 # Basics
 install zsh
 install neovim
+install curl
 
 # Cool Stuff
 install figlet
