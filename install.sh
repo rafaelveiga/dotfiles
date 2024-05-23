@@ -7,6 +7,5 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 
 ## Ricing Software
-sudo apt get bspwm sxhkd polybar picom nitrogen rofi
 
 # figure out how to install alacritty
