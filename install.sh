@@ -1,11 +1,14 @@
-## Oh My Zsh
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh -s $(which zsh)
+#!/bin/bash
 
-cd ~/.oh-my-zsh/custom/plugins
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+./symlink.sh
+./apt-install.sh
+./programs.sh
 
-## Ricing Software
+## upgrade all
+sudo apt upgrade -Y
 
-# figure out how to install alacritty
+## source all
+source ~/.zshrc
+
+## Final message
+figlet "All Done!" | lolcat
