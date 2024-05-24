@@ -10,7 +10,7 @@ figlet "Symlinking" | lolcat
 
 ## upgrade all
 figlet "Upgrading" | lolcat
-sudo apt upgrade -Y
+sudo apt upgrade -y
 
 ## setting oh-my-zsh as default shell
 figlet "Setting ZSH as default shell" | lolcat

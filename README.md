@@ -5,7 +5,7 @@ Using [How to set up a fresh Ubuntu desktop using only dotfiles and bash scripts
 1. Install git
 
 ```bash
-sudo apt install git
+sudo apt install -y git
 ```
 
 2. Create code directory
@@ -17,7 +17,7 @@ mkdir -p /code/dotfiles
 3. Clone the repository
 
 ```bash
-git clone https://dotfiles.rafaelveiga.com ./code/dotfiles
+git clone https://github.com/rafaelveiga/dotfiles.git ./code/dotfiles
 ```
 
 4. CD into the directory
