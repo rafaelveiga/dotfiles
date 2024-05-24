@@ -36,6 +36,10 @@ require("lazy").setup({
    -- tree sitter, a syntax tree generator
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
 
+  -- mason, a LS manager
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+
   -- lsp, quickstart configs for nvim lsp
   { 'neovim/nvim-lspconfig' },
 
@@ -50,6 +54,10 @@ require("lazy").setup({
 })
 
 require("bufferline").setup{}
+require("mason").setup{}
+require("mason-lspconfig").setup{
+  ensure_installed = { "elixirls" }
+}
 
 require("plugins.treesitter")
 require("plugins.lspconfig")
