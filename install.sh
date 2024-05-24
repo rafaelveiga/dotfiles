@@ -22,3 +22,4 @@ source ~/.zshrc
 
 ## Final message
 figlet "All Done!" | lolcat
+echo "Don't forget to set your SSH keys" | lolcat
