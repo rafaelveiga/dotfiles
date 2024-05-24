@@ -23,4 +23,34 @@ require("lazy").setup({
 
   -- color scheme
   { 'Mofiqul/dracula.nvim' },
+
+   -- telescope, a fuzzy finder
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
+  },
+
+  -- NERDTree, a file system explorer
+  { 'preservim/nerdtree' },
+
+   -- tree sitter, a syntax tree generator
+  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+
+  -- lsp, quickstart configs for nvim lsp
+  { 'neovim/nvim-lspconfig' },
+
+  -- cmp framework for auto-completion support
+  {'hrsh7th/nvim-cmp'},
+
+  -- install different completion source
+  {'hrsh7th/cmp-nvim-lsp'},
+  {'hrsh7th/cmp-buffer'},
+  {'hrsh7th/cmp-path'},
+  {'hrsh7th/cmp-cmdline'}
 })
+
+require("bufferline").setup{}
+
+require("plugins.treesitter")
+require("plugins.lspconfig")
+require("plugins.cmp")
