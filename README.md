@@ -26,6 +26,12 @@ git clone https://github.com/rafaelveiga/dotfiles.git ./code/dotfiles
 cd ./code/dotfiles
 ```
 
+5. Make the scripts executable
+
+```bash
+find . -name \*.sh -exec chmod 744 {} \;
+```
+
 6. Run the setup script
 
 ```bash
