@@ -8,6 +8,9 @@ figlet "Installing Programs" | lolcat
 figlet "Symlinking" | lolcat
 ./symlink.sh
 
+figlet "Post Install" | lolcat
+./post-install.sh
+
 ## upgrade all
 figlet "Upgrading" | lolcat
 sudo apt upgrade -y
