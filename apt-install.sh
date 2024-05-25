@@ -16,6 +16,9 @@ install zsh
 install neovim
 install curl
 
+# Warsaw deps
+install libnss3-tools
+
 # Cool Stuff
 install figlet
 install lolcat

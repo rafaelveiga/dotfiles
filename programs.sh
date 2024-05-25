@@ -6,3 +6,4 @@
 ./programs/obsidian.sh
 ./programs/krita.sh
 ./programs/1password.sh
+./programs/warsaw.sh
