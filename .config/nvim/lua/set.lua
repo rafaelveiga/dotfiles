@@ -13,5 +13,8 @@ vim.opt.expandtab = true
 -- Sets color scheme
 vim.cmd[[colorscheme dracula]]
 
+-- Remove swap files
+vim.opt.swapfile = false
+
 -- If 300ms have passed while nothing is typed, the swap file will be written do disk
 vim.opt.updatetime = 300

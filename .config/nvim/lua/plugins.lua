@@ -34,31 +34,72 @@ require("lazy").setup({
   { 'preservim/nerdtree' },
 
    -- tree sitter, a syntax tree generator
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-
-  -- mason, a LS manager
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "elixir", "eex", "heex" },
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end
+  },
 
   -- lsp, quickstart configs for nvim lsp
-  { 'neovim/nvim-lspconfig' },
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lspconfig = require('lspconfig')
+      local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+      lspconfig.elixirls.setup({
+        cmd = { "elixir-ls" },
+        capabilities = capabilities,
+      })
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+      })
+    end
+  },
 
   -- cmp framework for auto-completion support
-  {'hrsh7th/nvim-cmp'},
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline'
+    },
+    config = function()
+      local cmp = require('cmp')
+      cmp.setup({
+        -- add different completion source
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+        -- using default mapping preset
+        mapping = cmp.mapping.preset.insert({
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        snippet = {
+          -- you must specify a snippet engine
+          expand = function(args)
+            -- using neovim v0.10 native snippet feature
+            -- you can also use other snippet engines
+            vim.snippet.expand(args.body)
+          end,
+        },
+      })
+    end,
+  },
 
-  -- install different completion source
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/cmp-buffer'},
-  {'hrsh7th/cmp-path'},
-  {'hrsh7th/cmp-cmdline'}
+  -- indent lines
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
 
 require("bufferline").setup{}
-require("mason").setup{}
-require("mason-lspconfig").setup{
-  ensure_installed = { "elixirls" }
-}
-
-require("plugins.treesitter")
-require("plugins.lspconfig")
-require("plugins.cmp")
+require("lualine").setup{}
+require("ibl").setup{}
