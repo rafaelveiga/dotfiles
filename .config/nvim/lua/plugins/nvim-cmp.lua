@@ -13,13 +13,6 @@ return {
             }, {
                 name = "path"
             }}),
-            -- using default mapping preset
-            mapping = cmp.mapping.preset.insert({
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<CR>"] = cmp.mapping.confirm({
-                    select = true
-                })
-            }),
             snippet = {
                 -- you must specify a snippet engine
                 expand = function(args)
