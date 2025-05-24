@@ -1,5 +1,19 @@
-[user]
-  name = Rafael Veiga
-  email = dsg.rafael@gmail.com
 [pull]
 	rebase = false
+
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/dMRzplN8g2cGqAICr8Xfjk6Y8ntZuqB+95eyb5iEx
+  name = Rafael Veiga
+  email = dsg.rafael@gmail.com
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/mnt/c/Users/rafae/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+
+[commit]
+  gpgsign = true
+
+[core]
+	sshCommand = ssh.exe
