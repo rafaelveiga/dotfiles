@@ -17,3 +17,5 @@
 
 [core]
 	sshCommand = ssh.exe
+[init]
+	defaultBranch = main

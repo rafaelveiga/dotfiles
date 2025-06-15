@@ -17,7 +17,7 @@ vim.o.showmode = true
 
 -- sync clipboard between os and nvim
 vim.schedule(function()
-    vim.o.clipboard = "unnamedplus"
+	vim.o.clipboard = "unnamedplus"
 end)
 
 -- enable break indent
@@ -45,9 +45,9 @@ vim.o.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.o.list = true
 vim.opt.listchars = {
-    tab = "» ",
-    trail = "·",
-    nbsp = "␣"
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣",
 }
 
 -- Preview substitutions live, as you type!
@@ -62,6 +62,12 @@ vim.o.scrolloff = 999
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
+
+-- Sets the tab size to 2 spaces
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 require("config.lazy")
 require("config.keymap")
