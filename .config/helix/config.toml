@@ -1,0 +1,8 @@
+theme = "dracula_at_night"
+
+[editor]
+true-color = true
+bufferline = "multiple"
+
+[editor.soft-wrap]
+enable = true

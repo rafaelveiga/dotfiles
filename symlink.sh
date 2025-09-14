@@ -31,3 +31,4 @@ function linkDotfile {
 linkDotfile .gitconfig
 linkDotfile .zshrc
 linkDotfile .config/nvim
+linkDotfile .config/helix
